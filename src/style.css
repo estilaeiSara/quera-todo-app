@@ -16,6 +16,7 @@
 }
 
 * {
+  font-size: semibold;
   padding: 0px;
   margin: 0px;
   outline: none;
@@ -29,4 +30,11 @@ h1 {
 }
 .salam {
   font-family: ExtraBold;
+}
+.todaytask1 {
+  font-family: ExtraBold;
+}
+.todaytask2,
+.todaytask3 {
+  font-family: SemiBold;
 }

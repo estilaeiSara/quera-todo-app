@@ -19,22 +19,29 @@
   <body class="bg-gray-50 p-4">
     <!-- Header in mobile -->
     <header
-      class="w-80 h-12 rounded-lg mx-auto bg-white flex items-center justify-center relative"
+      class="w-80 h-12 rounded-lg mx-auto bg-white flex items-center justify-center relative drop-shadow-sm"
     >
       <h1 class="font-bold text-base">کوئرا لیست</h1>
-      <img
-        class="absolute right-3"
-        src="./assets/Frame 12161.png"
-        alt="همبرگرمنو"
-      />
+      <button class="absolute right-3">
+        <img src="./assets/Frame 12161.png" alt="همبرگرمنو" />
+      </button>
     </header>
     <!-- Profile -->
-    <main class="w-80 mt-16 mx-auto">
+    <main class="w-80 mt-12 mx-auto">
       <article class="w-full h-14 flex justify-center items-start relative">
-        <img
-          class="w-14 h-auto absolute right-0"
-          src="./assets/Ellipse 136.png"
-          alt="عکس پروفایل"
+        <button id="profileImageButton">
+          <img
+          id="profileImage"
+            class="w-14 h-auto absolute right-0"
+            src="./assets/Ellipse 136.png"
+            alt="عکس پروفایل"
+          />
+        </button>
+        <input
+          id="profileImageInput"
+          type="file"
+          accept="image/*"
+          class="hidden"
         />
         <section
           class="flex flex-col justify-center items-start gap-1 absolute right-20"
@@ -43,7 +50,91 @@
           <h3 class="date text-gray-800 font-semibold text-sm"></h3>
         </section>
       </article>
-      <div class="w-80 h-px mx-auto mt-8 bg-gray-100"></div>
+      <div class="w-80 h-px mx-auto mt-8 bg-gray-200"></div>
+
+      <!-- Today's tasks -->
+      <article class="mt-5 flex flex-col items-start gap-4">
+        <section class="flex flex-col items-start gap-1">
+          <div class="todaytask1 font-extrabold text-right">تسک‌های امروز</div>
+          <div class="todaytask2 font-semibold text-right">
+            تسکی برای امروز نداری!
+          </div>
+        </section>
+        <section
+          class="w-80 h-14 pr-4 border-2 border-dotted rounded-lg border-gray-300 flex justify-start items-center gap-1"
+        >
+          <button class="createTask">
+            <img
+              class="w-6 h-auto inline-block hover:bg-slate-100 hover:rounded-lg"
+              src="./assets/add.png"
+              alt="افزودن"
+            />
+          </button>
+          <div class="todaytask3 font-semibold text-[#007BFF] inline">
+            افزودن وظیفه جدید
+          </div>
+        </section>
+        <!--Create a new task-->
+        <section
+          class="newTask w-80 h-auto py-4 px-3 border-2 rounded-xl shadow-md border-gray-200 hidden"
+        >
+          <div class="flex flex-col justify-start items-start gap-4">
+            <form class="taskForm">
+              <input
+                class="bg-transparent placeholder:text-sm placeholder:font-semibold"
+                type="text"
+                placeholder="نام تسک"
+              />
+              <input
+                class="bg-transparent placeholder:text-xs placeholder:font-normal"
+                type="text"
+                placeholder="توضیحات"
+              />
+            </form>
+            <button class="piorityButton block hover:bg-gray-100">
+              <img
+                class="priority"
+                src="./assets/Frame 1000005505.png"
+                alt="اولویت"
+              />
+            </button>
+            <div
+              class="setPriority hidden w-60 h-11 rounded-lg shadow flex justify-center items-center gap-4"
+            >
+              <button
+                class="w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#11A483] bg-[#C3FFF1]"
+              >
+                پایین
+              </button>
+              <div class="border-l-2 border-[#EBEDEF] h-[20px]"></div>
+              <button
+                class="w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#FFAF37] bg-[#FFEFD6]"
+              >
+                متوسط
+              </button>
+              <div class="border-l-2 border-[#EBEDEF] h-[20px]"></div>
+              <button
+                class="w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#FF5F37] bg-[#FFE2DB]"
+              >
+                بالا
+              </button>
+            </div>
+          </div>
+          <div class="w-72 h-px mx-auto mt-4 bg-gray-200"></div>
+          <div class="mt-4 flex justify-end items-center gap-1">
+            <button
+              class="closeTask w-8 h-8 rounded-md bg-gray-100 flex justify-center items-center hover:bg-gray-300"
+            >
+              <img src="./assets/close-circle.png" alt="بستن" />
+            </button>
+            <button
+              class="w-32 h-8 px-2 py-1.5 text-xs font-semibold rounded-md bg-blue-500 text-white hover:bg-blue-300"
+            >
+              اضافه کردن تسک
+            </button>
+          </div>
+        </section>
+      </article>
     </main>
     <script src="./src/main.js"></script>
   </body>
