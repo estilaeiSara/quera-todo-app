@@ -1,40 +1,32 @@
 @font-face {
-  font-family: boold;
-  src: url(/assets/YekanBakhFaNum-Bold.ttf);
+  font-family: "YekanBakh";
+  src: url("/assets/YekanBakhFaNum-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
+
 @font-face {
-  font-family: SemiBold;
-  src: url(/assets/YekanBakhFaNum-SemiBold.ttf);
+  font-family: "YekanBakh";
+  src: url("/assets/YekanBakhFaNum-SemiBold.ttf") format("truetype");
+  font-weight: 600;
 }
+
 @font-face {
-  font-family: ExtraBold;
-  src: url(/assets/YekanBakhFaNum-ExtraBold.ttf);
+  font-family: "YekanBakh";
+  src: url("/assets/YekanBakhFaNum-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
 }
+
 @font-face {
-  font-family: Regular;
-  src: url(/assets/YekanBakhFaNum-Regular.ttf);
+  font-family: "YekanBakh";
+  src: url("/assets/YekanBakhFaNum-Regular.ttf") format("truetype");
+  font-weight: normal;
 }
 
 * {
+  font-family: font-yekan;
   font-size: semibold;
   padding: 0px;
   margin: 0px;
   outline: none;
   box-sizing: border-box;
-}
-h1 {
-  font-family: SemiBold;
-}
-.date {
-  font-family: Regular;
-}
-.salam {
-  font-family: ExtraBold;
-}
-.todaytask1 {
-  font-family: ExtraBold;
-}
-.todaytask2,
-.todaytask3 {
-  font-family: SemiBold;
 }

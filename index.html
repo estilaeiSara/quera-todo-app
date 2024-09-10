@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Things go easier with planning" />
     <meta name="author" content="saraEstilaei-atefeEskandari-yassaminNakhaei" />
-    <title>todolist</title>
+    <title>ToDo List</title>
     <link rel="stylesheet" href="./src/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
       rel="stylesheet"
-      type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/jalaali-js@1.1.3/dist/jalaali.js"></script>
@@ -23,18 +22,19 @@
     >
       <h1 class="font-bold text-base">کوئرا لیست</h1>
       <button class="absolute right-3">
-        <img src="./assets/Frame 12161.png" alt="همبرگرمنو" />
+        <img src="./assets/Frame 12161.png" alt="Menu" />
       </button>
     </header>
+
     <!-- Profile -->
     <main class="w-80 mt-12 mx-auto">
       <article class="w-full h-14 flex justify-center items-start relative">
         <button id="profileImageButton">
           <img
-          id="profileImage"
-            class="w-14 h-auto absolute right-0"
+            id="profileImage"
+            class="w-14 h-auto absolute right-0 rounded-full object-cover"
             src="./assets/Ellipse 136.png"
-            alt="عکس پروفایل"
+            alt="Profile Image"
           />
         </button>
         <input
@@ -50,16 +50,18 @@
           <h3 class="date text-gray-800 font-semibold text-sm"></h3>
         </section>
       </article>
+
       <div class="w-80 h-px mx-auto mt-8 bg-gray-200"></div>
 
       <!-- Today's tasks -->
       <article class="mt-5 flex flex-col items-start gap-4">
         <section class="flex flex-col items-start gap-1">
           <div class="todaytask1 font-extrabold text-right">تسک‌های امروز</div>
-          <div class="todaytask2 font-semibold text-right">
+          <div id="taskCount" class="todaytask2 font-semibold text-right">
             تسکی برای امروز نداری!
           </div>
         </section>
+
         <section
           class="w-80 h-14 pr-4 border-2 border-dotted rounded-lg border-gray-300 flex justify-start items-center gap-1"
         >
@@ -67,67 +69,116 @@
             <img
               class="w-6 h-auto inline-block hover:bg-slate-100 hover:rounded-lg"
               src="./assets/add.png"
-              alt="افزودن"
+              alt="Add Task"
             />
           </button>
           <div class="todaytask3 font-semibold text-[#007BFF] inline">
             افزودن وظیفه جدید
           </div>
         </section>
-        <!--Create a new task-->
+
+        <section class="motivation flex flex-col justify-center items-center">
+          <img src="./assets/2143202_Artboard 1.png" alt="ToDo List" />
+          <div class="font-extrabold text-base text-[#7D7D7F]">
+            چه کارهایی امروز برای انجام داری؟
+          </div>
+          <div class="font-semibold text-sm text-center text-[#AFAEB2]">
+            میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
+          </div>
+        </section>
+
+        <!-- Create a new task -->
         <section
           class="newTask w-80 h-auto py-4 px-3 border-2 rounded-xl shadow-md border-gray-200 hidden"
         >
           <div class="flex flex-col justify-start items-start gap-4">
             <form class="taskForm">
               <input
+                id="nameTask"
                 class="bg-transparent placeholder:text-sm placeholder:font-semibold"
                 type="text"
                 placeholder="نام تسک"
               />
               <input
+                id="descriptionTask"
                 class="bg-transparent placeholder:text-xs placeholder:font-normal"
                 type="text"
                 placeholder="توضیحات"
               />
             </form>
-            <button class="piorityButton block hover:bg-gray-100">
+
+            <!-- Priority Selection -->
+            <button class="priorityButton block hover:bg-gray-100">
               <img
                 class="priority"
                 src="./assets/Frame 1000005505.png"
-                alt="اولویت"
+                alt="Priority"
               />
             </button>
             <div
               class="setPriority hidden w-60 h-11 rounded-lg shadow flex justify-center items-center gap-4"
             >
               <button
-                class="w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#11A483] bg-[#C3FFF1]"
+                class="low w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#11A483] bg-[#C3FFF1] hover:bg-green-200"
               >
                 پایین
               </button>
-              <div class="border-l-2 border-[#EBEDEF] h-[20px]"></div>
+              <div class="medium border-l-2 border-[#EBEDEF] h-[20px]"></div>
               <button
-                class="w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#FFAF37] bg-[#FFEFD6]"
+                class="medium w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#FFAF37] bg-[#FFEFD6] hover:bg-orange-200"
               >
                 متوسط
               </button>
-              <div class="border-l-2 border-[#EBEDEF] h-[20px]"></div>
+              <div class="high border-l-2 border-[#EBEDEF] h-[20px]"></div>
               <button
-                class="w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#FF5F37] bg-[#FFE2DB]"
+                class="high w-11 h-6 font-bold text-xs flex justify-center items-center rounded text-[#FF5F37] bg-[#FFE2DB] hover:bg-red-200"
               >
                 بالا
               </button>
             </div>
+
+            <!-- Selected Priority -->
+            <section
+              class="lowPriority hidden w-14 h-6 font-bold text-xs rounded text-[#11A483] bg-[#C3FFF1] flex justify-center items-center gap-1"
+            >
+              <img
+                class="ddelete rounded-full hover:bg-green-200"
+                src="./assets/Frame 12162.png"
+                alt="Remove Priority"
+              />
+              <div>پایین</div>
+            </section>
+            <section
+              class="mediumPriority hidden w-14 h-6 font-bold text-xs rounded text-[#FFAF37] bg-[#FFEFD6] flex justify-center items-center gap-1"
+            >
+              <img
+                class="ddelete rounded-full hover:bg-orange-200"
+                src="./assets/Frame 12162.png"
+                alt="Remove Priority"
+              />
+              <div>متوسط</div>
+            </section>
+            <section
+              class="highPriority hidden w-14 h-6 font-bold text-xs rounded text-[#FF5F37] bg-[#FFE2DB] flex justify-center items-center gap-1"
+            >
+              <img
+                class="ddelete rounded-full hover:bg-red-200"
+                src="./assets/Frame 12162.png"
+                alt="Remove Priority"
+              />
+              <div>بالا</div>
+            </section>
           </div>
+
           <div class="w-72 h-px mx-auto mt-4 bg-gray-200"></div>
           <div class="mt-4 flex justify-end items-center gap-1">
             <button
               class="closeTask w-8 h-8 rounded-md bg-gray-100 flex justify-center items-center hover:bg-gray-300"
             >
-              <img src="./assets/close-circle.png" alt="بستن" />
+              <img src="./assets/close-circle.png" alt="Close" />
             </button>
             <button
+              id="submitTask"
               class="w-32 h-8 px-2 py-1.5 text-xs font-semibold rounded-md bg-blue-500 text-white hover:bg-blue-300"
             >
               اضافه کردن تسک
@@ -135,7 +186,13 @@
           </div>
         </section>
       </article>
+
+      <!-- Tasks to do -->
+      <article>
+        <ul class="mt-5" id="taskList"></ul>
+      </article>
     </main>
+
     <script src="./src/main.js"></script>
   </body>
 </html>
